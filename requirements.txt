@@ -27,7 +27,7 @@ oauthlib
 opt-einsum
 packaging
 pandas
-protobuf
+protobuf==3.20.0
 pyasn1
 pyasn1-modules
 python-dateutil
