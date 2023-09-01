@@ -3,11 +3,12 @@ from flask import Flask, render_template, request, redirect
 from flask_cors import CORS, cross_origin
 import pickle
 import pandas as pd
+from keras.models import load_model
 
 app=Flask(__name__)
 
 cors=CORS(app)
-model=pickle.load(open('model.pkl','rb'))
+model = load_model('model.h5')
 
 @app.route('/',methods=['GET','POST'])
 def index():
@@ -29,3 +30,4 @@ def predict():
     print(prediction)
 
     return str(np.round(prediction[0][0],2))
+
